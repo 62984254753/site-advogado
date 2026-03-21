@@ -462,10 +462,30 @@ Leva menos de 1 minuto
                             <label class="text-sm font-bold uppercase tracking-wider text-slate-500">WhatsApp (com DDD)</label>
                             <input required name="whatsapp" type="tel" placeholder="(00) 00000-0000" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition-all">
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">Número da OAB (Opcional)</label>
-                            <input name="oab" type="text" placeholder="Ex: 123.456" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition-all">
-                        </div>
+                        <div class="space-y-3">
+    <label class="text-sm font-bold uppercase tracking-wider text-slate-500">
+        Você é:
+    </label>
+
+    <div class="flex flex-col gap-3">
+
+        <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+            <input type="radio" name="perfil" value="Advogado" required class="accent-amber-500">
+            <span class="text-slate-700 font-medium">Advogado</span>
+        </label>
+
+        <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+            <input type="radio" name="perfil" value="Bacharel em Direito" class="accent-amber-500">
+            <span class="text-slate-700 font-medium">Bacharel em Direito</span>
+        </label>
+
+        <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+            <input type="radio" name="perfil" value="Estudante de Direito" class="accent-amber-500">
+            <span class="text-slate-700 font-medium">Estudante de Direito</span>
+        </label>
+
+    </div>
+</div>
                     </div>
                     
                     <div class="pt-4">
