@@ -3,83 +3,581 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imersão Advogado de Sucesso</title>
+    <title>Imersão Advogado de Sucesso | Advogado Elite</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
+
+        .sticky-nav {
+            background: white !important;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            padding-top: 0.75rem !important;
+            padding-bottom: 0.75rem !important;
+        }
+        .sticky-nav .nav-link { color: #475569 !important; }
+        .sticky-nav .nav-link:hover { color: #d97706 !important; }
+        .sticky-nav .logo-text { color: #1e3a8a !important; }
+        .sticky-nav .logo-icon { color: #1e3a8a !important; }
+        .sticky-nav .mobile-menu-btn { color: #0f172a !important; }
+
+        #mobile-menu {
+            display: none;
+            transition: all 0.3s ease;
+        }
+        #mobile-menu.active {
+            display: flex;
+        }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-900 selection:bg-amber-200">
 
-<body class="bg-slate-50">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-5">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                <i data-lucide="scale" class="logo-icon text-white transition-colors w-8 h-8"></i>
+                <span class="logo-text font-serif font-bold text-xl tracking-tight text-white transition-colors">
+                    ADVOGADO<span class="text-amber-500">ELITE</span>
+                </span>
+            </div>
 
-<div class="max-w-xl mx-auto mt-20 bg-white p-8 rounded-xl shadow">
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#inicio" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Início</a>
+                <a href="#problema" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Problema</a>
+                <a href="#imersao" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Imersão</a>
+                <a href="#modulos" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Módulos</a>
+                <a href="#mentor" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Mentor</a>
+                <a href="#depoimentos" class="nav-link text-sm font-medium text-white/90 hover:text-amber-500 transition-colors">Depoimentos</a>
+                <a href="#inscricao" class="bg-amber-500 hover:bg-emerald-500 text-white px-6 py-2 rounded-full text-sm font-bold transition-all duration-300">
+                    QUERO PARTICIPAR
+                </a>
+            </div>
 
-<h1 class="text-2xl font-bold mb-6 text-center">
-Garanta sua vaga agora
-</h1>
+            <button class="md:hidden text-white mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
 
-<form id="registration-form" class="space-y-4">
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white shadow-xl py-6 flex-col items-center gap-4 md:hidden">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Início</a>
+            <a href="#problema" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Problema</a>
+            <a href="#imersao" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Imersão</a>
+            <a href="#modulos" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Módulos</a>
+            <a href="#mentor" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Mentor</a>
+            <a href="#depoimentos" onclick="toggleMobileMenu()" class="text-slate-700 font-medium py-2">Depoimentos</a>
+            <a href="#inscricao" onclick="toggleMobileMenu()" class="bg-amber-500 text-white px-8 py-3 rounded-full font-bold mt-2">QUERO PARTICIPAR</a>
+        </div>
+    </nav>
 
-<input required name="nome" type="text" placeholder="Nome" class="w-full p-3 border rounded">
+    <section id="inicio" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-blue-950">
+        <div class="absolute inset-0 opacity-20">
+            <img
+                src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1920"
+                alt="Law Background"
+                class="w-full h-full object-cover"
+                referrerpolicy="no-referrer"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-950 via-blue-950/80 to-transparent"></div>
+        </div>
 
-<input required name="email" type="email" placeholder="Email" class="w-full p-3 border rounded">
+        <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in">
+                <span class="inline-block py-1 px-5 rounded-full bg-white text-emerald-700 border border-white shadow-lg font-semibold">
+                    Vagas Limitadas
+                </span>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-8">
+                    <span class="text-amber-500">Domine</span> a Prática Jurídica e
+                    <span class="text-amber-500 italic">Conquiste</span> seus Primeiros Clientes.
+                </h1>
+                <p class="text-xl text-slate-300 mb-10 leading-relaxed max-w-lg">
+                    A faculdade te ensinou a teoria. Eu vou te ensinar a ganhar dinheiro e construir uma carreira sólida no mundo real.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#inscricao" class="bg-amber-500 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105">
+                        QUERO PARTICIPAR AGORA
+                    </a>
+                    <div class="flex items-center gap-3 text-white/70 text-sm">
+                        <i data-lucide="shield-check" class="text-emerald-500 w-5 h-5"></i>
+                        <span>Garantia incondicional de 7 dias</span>
+                    </div>
+                </div>
+            </div>
 
-<input required name="whatsapp" type="tel" placeholder="WhatsApp" class="w-full p-3 border rounded">
+            <div class="hidden md:block relative animate-fade-in" style="animation-delay: 0.2s">
+                <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                    <img
+                        src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=800"
+                        alt="Lawyer Professional"
+                        class="w-full h-auto"
+                        referrerpolicy="no-referrer"
+                    >
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl z-20 max-w-[200px]">
+                    <div class="flex text-emerald-500 mb-2">
+                        <i data-lucide="award" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="award" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="award" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="award" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="award" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-800 uppercase tracking-tighter">Método Validado por +500 Advogados</p>
+                </div>
+            </div>
+        </div>
 
-<button type="submit" class="w-full bg-emerald-500 text-white p-4 rounded font-bold">
-REALIZAR INSCRIÇÃO AGORA
-</button>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/30">
+            <i data-lucide="chevron-down" class="w-8 h-8"></i>
+        </div>
+    </section>
 
-</form>
+    <section id="problema" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-sm font-bold text-emerald-600 uppercase tracking-[0.2em] mb-4">O Cenário Atual</h2>
+                <h3 class="text-4xl font-serif font-bold text-slate-900 mb-6">Por que 90% dos novos advogados desistem nos primeiros 2 anos?</h3>
+                <div class="h-1 w-20 bg-amber-500 mx-auto"></div>
+            </div>
 
-</div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition-colors">
+                        <i data-lucide="book-open" class="text-blue-900 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Abismo Teórico</h4>
+                    <p class="text-slate-600 leading-relaxed">A faculdade foca em leis, mas não ensina como gerir um escritório, cobrar honorários ou fechar contratos.</p>
+                </div>
+                <div class="p-10 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition-colors">
+                        <i data-lucide="users" class="text-blue-900 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Invisibilidade no Mercado</h4>
+                    <p class="text-slate-600 leading-relaxed">Você tem a OAB, mas ninguém te conhece. O medo de prospectar clientes trava seu crescimento.</p>
+                </div>
+                <div class="p-10 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-blue-900 group-hover:text-white transition-colors">
+                        <i data-lucide="trending-up" class="text-blue-900 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Insegurança Prática</h4>
+                    <p class="text-slate-600 leading-relaxed">O medo de errar um prazo ou uma petição te impede de aceitar causas maiores e mais lucrativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
+    <section id="imersao" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-blue-800/10 skew-x-12 translate-x-1/2"></div>
 
-const form = document.getElementById('registration-form');
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-amber-500 font-bold uppercase tracking-widest text-sm mb-4">A Solução Definitiva</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight">
+                        A Imersão que vai transformar seu <span class="italic">Diploma</span> em um <span class="text-amber-500">Negócio Lucrativo</span>.
+                    </h3>
+                    <p class="text-lg text-slate-400 mb-8">
+                        Não é um curso teórico. É um treinamento prático de 3 dias onde você vai aprender o que os grandes escritórios não querem que você saiba.
+                    </p>
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-amber-500 shrink-0 w-5 h-5"></i>
+                            <span class="text-slate-200">Prospecção ética e moderna de clientes</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-amber-500 shrink-0 w-5 h-5"></i>
+                            <span class="text-slate-200">Gestão de escritório para iniciantes</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-amber-500 shrink-0 w-5 h-5"></i>
+                            <span class="text-slate-200">Precificação estratégica (Pare de cobrar barato)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="text-amber-500 shrink-0 w-5 h-5"></i>
+                            <span class="text-slate-200">Oratória e postura em audiências</span>
+                        </li>
+                    </ul>
 
-    const button = form.querySelector('button');
-    const original = button.innerText;
+                    <a href="#inscricao" class="bg-amber-500 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full transition-all transform hover:scale-105 shadow-lg inline-flex items-center justify-center gap-2">
+                        GARANTIR MINHA VAGA
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
 
-    button.disabled = true;
-    button.innerText = 'Gerando pagamento...';
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4 pt-12">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=400" alt="Law 1" class="rounded-2xl shadow-lg" referrerpolicy="no-referrer">
+                        <img src="orlando-bio.jpeg" alt="Dr. Orlando Custódio" class="rounded-2xl shadow-lg" referrerpolicy="no-referrer">
+                    </div>
+                    <div class="space-y-4">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=400" alt="Law 3" class="rounded-2xl shadow-lg" referrerpolicy="no-referrer">
+                        <img src="orlando.JPEG" alt="Dr. Orlando Custódio" class="rounded-2xl shadow-lg w-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    try {
+    <section id="modulos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4">O Que Você Vai Aprender</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Um cronograma pensado para quem não tem tempo a perder e precisa de resultados imediatos.</p>
+            </div>
 
-        const formData = new FormData(form);
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">01</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Mentalidade de Advogado Empreendedor</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Como sair da postura de estudante e assumir o comando da sua carreira.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">02</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Marketing Jurídico Ético</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Estratégias digitais para atrair clientes sem ferir o código da OAB.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">03</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Precificação e Contratos</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Como cobrar o valor justo e garantir que o cliente pague com satisfação.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">04</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Prática de Audiência</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Simulações reais para você nunca mais tremer diante de um juiz.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">05</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Gestão de Prazos e Processos</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Ferramentas gratuitas para organizar seu fluxo de trabalho.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">06</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Networking Estratégico</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Como construir parcerias que geram indicações constantes.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">07</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Escrita Jurídica Persuasiva</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Petições que convencem e aceleram o resultado dos processos.</p>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-xl border-l-4 border-amber-500 hover:bg-white hover:shadow-lg transition-all">
+                    <span class="text-3xl font-serif font-black text-amber-500/20 block mb-4">08</span>
+                    <h4 class="font-bold text-lg mb-3 leading-tight">Fechamento de Vendas</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">Técnicas de persuasão para converter consultas em contratos assinados.</p>
+                </div>
+            </div>
 
-        const data = {
-            nome: formData.get('nome'),
-            email: formData.get('email'),
-            whatsapp: formData.get('whatsapp')
-        };
+            <div class="mt-16 text-center">
+                <a href="#inscricao" class="bg-amber-500 hover:bg-emerald-500 text-white font-bold py-4 px-12 rounded-full transition-all transform hover:scale-105 shadow-lg inline-flex items-center justify-center gap-2">
+                    QUERO MEU ACESSO AGORA
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        const response = await fetch('https://mercado-pago-backend-seven.vercel.app/api/create-preference', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
+    <section class="py-24 bg-blue-950 text-white">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800" alt="Team" class="rounded-3xl shadow-2xl" referrerpolicy="no-referrer">
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-serif font-bold mb-8">Esta Imersão é para você que:</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-1">
+                            <i data-lucide="check-circle-2" class="text-blue-950 w-3.5 h-3.5"></i>
+                        </div>
+                        <p class="text-lg text-slate-300">Acabou de pegar a carteira da OAB e está perdido.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-1">
+                            <i data-lucide="check-circle-2" class="text-blue-950 w-3.5 h-3.5"></i>
+                        </div>
+                        <p class="text-lg text-slate-300">Trabalha como associado e quer abrir o próprio escritório.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-1">
+                            <i data-lucide="check-circle-2" class="text-blue-950 w-3.5 h-3.5"></i>
+                        </div>
+                        <p class="text-lg text-slate-300">Sente que a faculdade não te preparou para o mercado real.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-1">
+                            <i data-lucide="check-circle-2" class="text-blue-950 w-3.5 h-3.5"></i>
+                        </div>
+                        <p class="text-lg text-slate-300">Tem dificuldade em conseguir clientes e cobrar honorários.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center shrink-0 mt-1">
+                            <i data-lucide="check-circle-2" class="text-blue-950 w-3.5 h-3.5"></i>
+                        </div>
+                        <p class="text-lg text-slate-300">Quer acelerar 5 anos de carreira em apenas 3 dias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mentor" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="w-full md:w-1/2">
+                    <div class="relative inline-block w-full max-w-sm h-[750px] overflow-hidden rounded-3xl">
+                        <div class="absolute -top-2 -left-2 w-full h-full border border-amber-500 rounded-3xl"></div>
+                        <img
+                            src="orlando-bio.jpeg"
+                            alt="Dr. Orlando Custódio"
+                            class="relative z-10 w-full h-full object-cover scale-125 object-[center_10%]"
+                        >
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-amber-600 font-bold uppercase tracking-widest text-sm mb-4">Quem vai te guiar</h2>
+                    <h3 class="text-4xl font-serif font-bold text-slate-900 mb-6">Dr. Orlando Custódio</h3>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        Com mais de 15 anos de atuação e sócio-fundador de um dos escritórios mais respeitados do país, Orlando já mentorou centenas de novos advogados a saírem do zero.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Sua missão é democratizar o conhecimento prático que antes era restrito apenas às grandes bancas de advocacia.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-3xl font-serif font-bold text-blue-900">+1500</p>
+                            <p class="text-sm text-slate-500 uppercase font-bold tracking-tighter">Processos Ganhos</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-serif font-bold text-blue-900">+500</p>
+                            <p class="text-sm text-slate-500 uppercase font-bold tracking-tighter">Alunos Formados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4">O Que Dizem Nossos Alunos</h2>
+                <p class="text-slate-600">Resultados reais de quem decidiu investir na própria carreira.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 italic text-slate-700 relative">
+                    <div class="absolute -top-4 left-10 text-6xl text-amber-500/20 font-serif">"</div>
+                    <p class="mb-8 leading-relaxed">"A imersão foi o divisor de águas. Em 2 meses recuperei 10x o valor investido apenas aplicando as técnicas de prospecção."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <p class="font-bold text-slate-900 not-italic">Dra. Juliana Costa</p>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-tighter not-italic">Advogada Civilista</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 italic text-slate-700 relative">
+                    <div class="absolute -top-4 left-10 text-6xl text-amber-500/20 font-serif">"</div>
+                    <p class="mb-8 leading-relaxed">"Eu tinha pânico de audiências. Depois das simulações na imersão, me sinto seguro e no controle da situação."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <p class="font-bold text-slate-900 not-italic">Dr. Marcos Vinícius</p>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-tighter not-italic">Advogado Trabalhista</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-10 rounded-2xl shadow-sm border border-slate-100 italic text-slate-700 relative">
+                    <div class="absolute -top-4 left-10 text-6xl text-amber-500/20 font-serif">"</div>
+                    <p class="mb-8 leading-relaxed">"Finalmente aprendi a cobrar o que eu valho. Parei de dar consultoria de graça e agora sou valorizada pelos clientes."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-slate-200"></div>
+                        <div>
+                            <p class="font-bold text-slate-900 not-italic">Dra. Beatriz Santos</p>
+                            <p class="text-xs text-slate-500 uppercase font-bold tracking-tighter not-italic">Advogada de Família</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricao" class="py-24 bg-blue-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <i data-lucide="scale" class="absolute -bottom-20 -right-20 w-[400px] h-[400px]"></i>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-2xl md:text-4xl font-serif font-bold mb-4">
+                Garanta sua vaga agora
+            </h2>
+
+            <p class="text-sm md:text-lg text-slate-300 mb-6">
+                Leva menos de 1 minuto
+            </p>
+
+            <div id="form-container" class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl text-slate-900 text-left">
+                <form id="registration-form" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">Nome Completo</label>
+                            <input required name="nome" type="text" placeholder="Seu nome" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">E-mail Profissional</label>
+                            <input required name="email" type="email" placeholder="seu@email.com" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">WhatsApp (com DDD)</label>
+                            <input required name="whatsapp" type="tel" placeholder="(00) 00000-0000" class="w-full p-4 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-amber-500 outline-none transition-all">
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="text-sm font-bold uppercase tracking-wider text-slate-500">
+                                Você é:
+                            </label>
+
+                            <div class="flex flex-col gap-3">
+                                <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+                                    <input type="radio" name="perfil" value="Advogado" required class="accent-amber-500">
+                                    <span class="text-slate-700 font-medium">Advogado</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+                                    <input type="radio" name="perfil" value="Bacharel em Direito" class="accent-amber-500">
+                                    <span class="text-slate-700 font-medium">Bacharel em Direito</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:border-amber-500 transition">
+                                    <input type="radio" name="perfil" value="Estudante de Direito" class="accent-amber-500">
+                                    <span class="text-slate-700 font-medium">Estudante de Direito</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-5 rounded-xl text-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3">
+                            REALIZAR INSCRIÇÃO AGORA
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                        <p class="text-center text-slate-400 text-sm mt-4 flex items-center justify-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            Seus dados estão protegidos pela LGPD.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-950 text-slate-500 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <i data-lucide="scale" class="text-slate-700 w-6 h-6"></i>
+                <span class="font-serif font-bold text-lg tracking-tight text-slate-300">
+                    ADVOGADO<span class="text-emerald-500">ELITE</span>
+                </span>
+            </div>
+
+            <div class="text-sm">
+                © 2026 Imersão Advogado de Sucesso. Todos os direitos reservados.
+            </div>
+
+            <div class="flex gap-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky-nav');
+            } else {
+                navbar.classList.remove('sticky-nav');
+            }
         });
 
-        const result = await response.json();
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-        if (result.init_point) {
-            window.location.href = result.init_point;
-        } else {
-            alert('Erro ao gerar pagamento');
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+            const isOpen = mobileMenu.classList.contains('active');
+            menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
         }
 
-    } catch (error) {
-        alert('Erro na conexão');
-    }
+        const form = document.getElementById('registration-form');
 
-    button.disabled = false;
-    button.innerText = original;
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-});
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
 
-</script>
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Gerando pagamento...';
 
+            try {
+                const formData = new FormData(form);
+
+                const data = {
+                    nome: formData.get('nome'),
+                    email: formData.get('email'),
+                    whatsapp: formData.get('whatsapp'),
+                    perfil: formData.get('perfil')
+                };
+
+                const response = await fetch('https://mercado-pago-backend-seven.vercel.app/api/create-preference', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.init_point) {
+                    window.location.href = result.init_point;
+                } else {
+                    alert('Erro ao gerar pagamento');
+                }
+
+            } catch (error) {
+                console.error('Erro ao conectar com pagamento:', error);
+                alert('Erro ao conectar com pagamento');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
